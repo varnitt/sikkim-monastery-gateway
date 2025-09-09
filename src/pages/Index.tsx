@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navigation } from "@/components/Navigation";
+import { HeroSection } from "@/components/HeroSection";
+import { VirtualTours } from "@/components/VirtualTours";
+import { MonasteryMap } from "@/components/MonasteryMap";
+import { CulturalCalendar } from "@/components/CulturalCalendar";
+import { DigitalArchives } from "@/components/DigitalArchives";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      <main>
+        <HeroSection />
+        <section id="tours">
+          <VirtualTours />
+        </section>
+        <section id="map">
+          <MonasteryMap />
+        </section>
+        <section id="events">
+          <CulturalCalendar />
+        </section>
+        <section id="archives">
+          <DigitalArchives />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };
