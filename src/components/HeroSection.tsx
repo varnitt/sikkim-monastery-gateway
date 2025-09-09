@@ -16,6 +16,15 @@ export const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+        <div className="flex justify-center items-center gap-3 mb-4">
+          <Badge variant="secondary" className="px-3 py-1 text-xs backdrop-blur-sm bg-white/10 border-white/20">
+            Government of Sikkim
+          </Badge>
+          <Badge variant="secondary" className="px-3 py-1 text-xs backdrop-blur-sm bg-white/10 border-white/20">
+            Tourism Department
+          </Badge>
+        </div>
+        
         <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm backdrop-blur-sm bg-white/10 border-white/20">
           Digital Heritage Platform
         </Badge>
