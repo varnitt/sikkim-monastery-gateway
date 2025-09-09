@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Navigation, Clock, Star } from "lucide-react";
+import rumtekImage from "@/assets/rumtek-monastery.jpg";
+import pemayangtseImage from "@/assets/pemayangtse-monastery.jpg";
+import tashidingImage from "@/assets/tashiding-monastery.jpg";
+import dubdiImage from "@/assets/dubdi-monastery.jpg";
 
 const monasteries = [
   {
@@ -13,7 +17,8 @@ const monasteries = [
     rating: 4.8,
     distance: "24 km from Gangtok",
     coordinates: { lat: 27.2926, lng: 88.5612 },
-    featured: true
+    featured: true,
+    image: rumtekImage
   },
   {
     id: 2,
@@ -24,7 +29,8 @@ const monasteries = [
     rating: 4.7,
     distance: "110 km from Gangtok",
     coordinates: { lat: 27.2082, lng: 88.2142 },
-    featured: true
+    featured: true,
+    image: pemayangtseImage
   },
   {
     id: 3,
@@ -35,7 +41,8 @@ const monasteries = [
     rating: 4.6,
     distance: "118 km from Gangtok",
     coordinates: { lat: 27.2532, lng: 88.1821 },
-    featured: false
+    featured: false,
+    image: tashidingImage
   },
   {
     id: 4,
@@ -46,7 +53,8 @@ const monasteries = [
     rating: 4.5,
     distance: "135 km from Gangtok",
     coordinates: { lat: 27.3355, lng: 88.2142 },
-    featured: false
+    featured: false,
+    image: dubdiImage
   }
 ];
 
@@ -98,15 +106,23 @@ export const MonasteryMap = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Featured Monasteries</h3>
             {monasteries.map((monastery) => (
-              <Card key={monastery.id} className="hover:shadow-monastery transition-monastery cursor-pointer">
+              <Card key={monastery.id} className="hover:shadow-monastery transition-monastery cursor-pointer overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
+                  <img 
+                    src={monastery.image} 
+                    alt={monastery.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {monastery.featured && (
+                    <Badge variant="secondary" className="absolute top-2 right-2 text-xs">
+                      Featured
+                    </Badge>
+                  )}
+                </div>
                 <CardContent className="p-4">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="font-semibold text-lg">{monastery.name}</h4>
-                    {monastery.featured && (
-                      <Badge variant="secondary" className="text-xs">
-                        Featured
-                      </Badge>
-                    )}
                   </div>
                   
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">

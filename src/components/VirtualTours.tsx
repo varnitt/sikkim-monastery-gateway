@@ -2,15 +2,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Camera, Play, Languages, Headphones, Clock, Users } from "lucide-react";
-import monasteryCourtyard from "@/assets/monastery-courtyard.jpg";
-import monasteryInterior from "@/assets/monastery-interior.jpg";
+import rumtekInterior from "@/assets/monastery-interior.jpg";
+import pemayangtseCourtyard from "@/assets/monastery-courtyard.jpg";
 
 const virtualTours = [
   {
     id: 1,
     title: "Rumtek Monastery: Sacred Halls",
     description: "Experience the grandeur of the main prayer hall with its golden Buddha statues and intricate murals",
-    image: monasteryInterior,
+    image: rumtekInterior,
     duration: "15 min",
     languages: 5,
     participants: 1247,
@@ -21,7 +21,7 @@ const virtualTours = [
     id: 2,
     title: "Pemayangtse: Monastery Grounds",
     description: "Walk through the peaceful courtyards and explore the traditional Tibetan architecture",
-    image: monasteryCourtyard,
+    image: pemayangtseCourtyard,
     duration: "12 min",
     languages: 4,
     participants: 892,
